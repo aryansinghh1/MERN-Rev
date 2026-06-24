@@ -30,4 +30,8 @@
   width: 120px;
   height: 120px;
   border: black 2px solid;
+
+}
+.box:nth-child(odd){
+    background-color: red;
 }
