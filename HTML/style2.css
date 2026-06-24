@@ -1,26 +1,33 @@
-.para1{
-    color: green;
+.para1 {
+  color: green;
 }
-#para1{
-    color: aqua;
-}
-
-.para1{
-    font: 20px;
-    line-height: 20px;
-    border: blueviolet 2px solid;
+#para1 {
+  color: aqua;
 }
 
-.container{
-    display: flex;
-    /* flex-direction: column; */
-    flex-wrap: wrap;
-
+.para1 {
+  font: 20px;
+  line-height: 20px;
+  border: blueviolet 2px solid;
 }
-.box{
-    background-color: aqua;
-    width: 120px;
-    height: 120px;
-    border: black 2px solid;
-    
+
+.container {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  width: 120px;
+  height: 120px;
+  border: black 2px solid;
 }
