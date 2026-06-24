@@ -12,11 +12,15 @@
 }
 
 .container {
-  display: flex;
+  /* display: flex; */
   /* flex-direction: column; */
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+  /* align-items: center; */
+
+  display: grid;
+  grid-template-columns: 150px 150px 150px 150px;
+  grid-template-rows: 100px 100px 100px;
   gap: 10px;
 
   
@@ -27,11 +31,11 @@
   justify-content: center;
   align-items: center;
   background-color: aqua;
-  width: 120px;
-  height: 120px;
-  border: black 2px solid;
+  /* width: 120px; */
+  /* height: 120px; */
+  /* border: black 2px solid; */
 
 }
-.box:nth-child(odd){
+/* .box:nth-child(odd){
     background-color: red;
-}
+} */
