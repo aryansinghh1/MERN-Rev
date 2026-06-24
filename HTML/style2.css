@@ -23,9 +23,15 @@
   /* grid-template-columns: 150px 200px 150px 1fr; */
   /* grid-template-columns: auto auto auto auto; */
   /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-  grid-template-columns: repeat(4,auto);
-  grid-template-rows: 100px 100px 100px;
+  /* grid-template-columns: repeat(4,auto); */
+  /* grid-template-rows: 100px 100px 100px; */
+  grid-auto-columns: 150px;
+  grid-auto-rows: 200px;
   gap: 10px;
+  grid-template-areas: 
+  "box5 box5 box2"
+  "box4 box1 box2"
+  "box4 box3 box3";
 
   
 }
