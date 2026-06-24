@@ -5,3 +5,8 @@
     color: aqua;
 }
 
+.para1{
+    font: 20px;
+    line-height: 20px;
+    border: blueviolet 2px solid;
+}
