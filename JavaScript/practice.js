@@ -30,10 +30,12 @@
 
 
 
-console.log(num1);
-console.log(num2);
-console.log(num3);
+// console.log(num1);
+// console.log(num2);
+// console.log(num3);
 
-let num1 = 1;
-var num2 = 3;
-const num3 = 5;
+// let num1 = 1;
+// var num2 = 3;
+// const num3 = 5;
+
+
