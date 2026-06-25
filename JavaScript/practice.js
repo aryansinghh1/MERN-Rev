@@ -16,11 +16,13 @@
 function scope() {
     if(true){
         // let num = 5;
-        const num = 5;
+        // const num = 5;
+        var num = 5;
         // console.log(num);  // it will print 5
     }
     // console.log(num);  // using let it would give you reference error : num is not defined
-    console.log(num);  // using const it would give you reference error : num is not defined
+    // console.log(num);  // using const it would give you reference error : num is not defined
+    console.log(num);  // using var it will print num.
 }
 
 scope();
