@@ -4,24 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 style="text-align: center;">Todo App</h1>
-    <h2 style="text-align: center;">Add Todo</h2>
-    <div class="add">
-      <form action="">
-        <p style="font-size: 20px;">Title:-</p>
-        <input style="width: 400px;" type="text" name="title" />
-        <p style="font-size: 20px;">Description:-</p>
-        <input type="text" name="Description" id="des" /> <br><br>
+    <main class="container">
+      <h1>Todo App</h1>
 
-        <button type="submit" id="addbtn">Add</button>
-      </form>
-    </div>
+      <section class="add">
+        <h2>Add Todo</h2>
+        <form id="todo-form" novalidate>
+          <label for="title">Title</label>
+          <input id="title" type="text" name="title" placeholder="Enter title" required />
 
-    <div class="list">
-      <p style="text-align: center; font-size: 20px; ">List Todo:</p>
-    </div>
+          <label for="des">Description</label>
+          <textarea
+            name="description"
+            id="des"
+            placeholder="Write a short description"
+            rows="3"
+          ></textarea>
+
+          <button type="submit" id="addbtn">Add</button>
+        </form>
+      </section>
+
+      <section class="list">
+        <div class="list-header">
+          <h2>Todo List</h2>
+          <p id="todo-count">0 tasks</p>
+        </div>
+        <ul id="todo-list"></ul>
+        <p id="empty-state">No todos yet. Add your first task.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
   </body>
 </html>
