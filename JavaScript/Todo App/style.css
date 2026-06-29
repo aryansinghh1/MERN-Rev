@@ -1,0 +1,12 @@
+:root{
+    background-color: antiquewhite;
+}
+.add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: orange;
+    padding: 50px;
+    border-radius: 5px;
+}
