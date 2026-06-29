@@ -27,11 +27,15 @@ deleteBtn.innerText = 'Delete';
 deleteBtn.style.backgroundColor = "red";
 deleteBtn.style.padding = "5px";
 deleteBtn.style.borderRadius = "5px";
+deleteBtn.addEventListener("click",()=>{
+    li.remove();
+})
 
 li.append(newTitle);
 li.append(newDesc);
 li.append(deleteBtn);
 todos.append(li);
-
+title.value = "";
+desc.value = "";
 
 })
