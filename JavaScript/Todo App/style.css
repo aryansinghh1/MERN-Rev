@@ -6,7 +6,30 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: orange;
+    background-color: rgb(240, 178, 64);
+    padding: 50px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#addbtn{
+    height: 30px;
+    width: 100px;
+    background-color: greenyellow;
+    border-radius: 5px;
+}
+
+#des{
+    height: 60px;
+    width: 300px;
+}
+
+.list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(139, 219, 188);
     padding: 50px;
     border-radius: 5px;
 }
