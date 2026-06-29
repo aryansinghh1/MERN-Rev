@@ -1,0 +1,23 @@
+.box{
+    border: 1px solid black;
+    padding: 40px;
+}
+
+#grandparent{
+    width: 200px;
+    background-color: green;
+}
+
+#parent{
+    background-color: aqua;
+}
+
+#child{
+    background-color: red;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
