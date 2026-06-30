@@ -5,15 +5,15 @@
 
 #grandparent{
     width: 200px;
-    /* background-color: green; */
+    background-color: green;
 }
 
 #parent{
-    /* background-color: aqua; */
+    background-color: aqua;
 }
 
 #child{
-    /* background-color: red; */
+    background-color: red;
 }
 body{
     height: 100vh;
