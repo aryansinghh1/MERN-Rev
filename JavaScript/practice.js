@@ -1,7 +1,4 @@
-// console.log('A');
-// console.log('B');
-// console.log('C');
-
+//////////////////////////////////////learning scope and hoisting///////////////////////////////////////
 
 // let a = 5; 
 
@@ -28,7 +25,7 @@
 
 // scope();
 
-
+//////////////////////////////////////////////////////////////////////
 
 // console.log(num1);
 // console.log(num2);
@@ -38,26 +35,48 @@
 // var num2 = 3;
 // const num3 = 5;
 
+////////////////////////////////////////////////////////////////////
 
 
+//////////////////////////////////async////////////////////////////////
 
-//async
+// console.log("2");
 
+// setTimeout(()=>{
+//     console.log("1");
+// },3000);
+
+// console.log("5");
+
+// setTimeout(()=>{
+//     console.log("4");
+// },2000);
+
+// console.log("3");
+
+// setTimeout(()=>{
+//     console.log("6");
+// },1000);
+
+
+////////////////////////////////////////////////////////////////////
+
+// console.log("start");
+// setTimeout(()=>{
+//     console.log("hello");
+// },0)
+// console.log("end");
+
+///////////////////////////////////////////////////////////////////
+
+/////////////////////promise//////////////////////////////////
+
+console.log("1");
+Promise.resolve().then(()=>{console.log("9")})
 console.log("2");
-
-setTimeout(()=>{
-    console.log("1");
-},3000);
-
-console.log("5");
-
-setTimeout(()=>{
-    console.log("4");
-},2000);
-
-console.log("3");
-
-setTimeout(()=>{
-    console.log("6");
-},1000);
-
+setTimeout(()=>console.log("3"),3000)
+console.log("4");
+setTimeout(()=>console.log("5"),1000)
+Promise.resolve().then(()=>{console.log("8")})
+console.log("6");
+setTimeout(()=>console.log("7"),2000)
