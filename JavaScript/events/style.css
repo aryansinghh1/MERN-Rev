@@ -3,16 +3,16 @@
     padding: 40px;
 }
 
-#grandparent{
+#grandparent:hover{
     width: 200px;
     background-color: green;
 }
 
-#parent{
+#parent:hover{
     background-color: aqua;
 }
 
-#child{
+#child:hover{
     background-color: red;
 }
 body{
