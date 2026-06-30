@@ -3,17 +3,17 @@
     padding: 40px;
 }
 
-#grandparent:hover{
+#grandparent{
     width: 200px;
-    background-color: green;
+    /* background-color: green; */
 }
 
-#parent:hover{
-    background-color: aqua;
+#parent{
+    /* background-color: aqua; */
 }
 
-#child:hover{
-    background-color: red;
+#child{
+    /* background-color: red; */
 }
 body{
     height: 100vh;
