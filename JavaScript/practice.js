@@ -1,6 +1,6 @@
 //////////////////////////////////////learning scope and hoisting///////////////////////////////////////
 
-// let a = 5; 
+// let a = 5;
 
 // function sayHello() {
 //     console.log("Hello");
@@ -8,7 +8,6 @@
 
 // sayHello();
 // console.log(a);
-
 
 // function scope() {
 //     if(true){
@@ -37,7 +36,6 @@
 
 ////////////////////////////////////////////////////////////////////
 
-
 //////////////////////////////////async////////////////////////////////
 
 // console.log("2");
@@ -57,7 +55,6 @@
 // setTimeout(()=>{
 //     console.log("6");
 // },1000);
-
 
 ////////////////////////////////////////////////////////////////////
 
@@ -80,7 +77,6 @@
 // Promise.resolve().then(()=>{console.log("8")})
 // console.log("6");
 // setTimeout(()=>console.log("7"),2000)
-
 
 ///////////////////////////////////callack///////////////////////
 // function one(){
@@ -121,37 +117,80 @@
 
 ////////////////////////////////////////////////
 
-function login(){
-    console.log("Logging in....");
+// function login(){
+//     console.log("Logging in....");
 
-    setTimeout(() => {
-        console.log("logged in successfully");
-    }, 5000);
+//     setTimeout(() => {
+//         console.log("logged in successfully");
+//     }, 5000);
+// }
+
+// function getUser(){
+//     console.log("getting user....");
+//     setTimeout(() => {
+//         console.log("User details loaded");
+//     }, 2000);
+// }
+
+// function getOrders(){
+//     console.log("getting orders");
+
+//     setTimeout(() => {
+//         console.log("Orders loaded");
+//     }, 1000);
+// }
+
+// function getOrderDetails(){
+//     console.log("Getting order details.....");
+//     setTimeout(() => {
+//         console.log("Order details loaded");
+//     }, 4000);
+// }
+
+// login();
+// getUser();
+// getOrders();
+// getOrderDetails();
+
+///////////////////////////////////////////////////////////////////
+
+function login(callack) {
+  console.log("Logging in....");
+
+  setTimeout(() => {
+    console.log("logged in successfully");
+    callack();
+  }, 5000);
 }
 
-function getUser(){
-    console.log("getting user....");
-    setTimeout(() => {
-        console.log("User details loaded");
-    }, 2000);
+function getUser(callack) {
+  console.log("getting user....");
+  setTimeout(() => {
+    console.log("User details loaded");
+    callack();
+  }, 2000);
 }
 
-function getOrders(){
-    console.log("getting orders");
+function getOrders(callack) {
+  console.log("Getting orders");
 
-    setTimeout(() => {
-        console.log("Orders loaded");
-    }, 1000);
+  setTimeout(() => {
+    console.log("Orders loaded");
+    callack();
+  }, 1000);
 }
 
-function getOrderDetails(){
-    console.log("Getting order details.....");
-    setTimeout(() => {
-        console.log("Order details loaded");
-    }, 4000);
+function getOrderDetails() {
+  console.log("Getting order details.....");
+  setTimeout(() => {
+    console.log("Order details loaded");
+  }, 4000);
 }
 
-login();
-getUser();
-getOrders();
-getOrderDetails();
+login(() => {
+  getUser(() => {
+    getOrders(() => {
+      getOrderDetails();
+    });
+  });
+});
