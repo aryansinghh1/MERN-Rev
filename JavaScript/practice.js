@@ -115,43 +115,43 @@
 
 ////////////////////////////////////////////////////
 
-setTimeout(()=>{
-console.log("hello");
-},1000)
+// setTimeout(()=>{
+// console.log("hello");
+// },1000)
 
 ////////////////////////////////////////////////
 
-// function login(){
-//     console.log("Logging in....");
+function login(){
+    console.log("Logging in....");
 
-//     setTimeout(() => {
-//         console.log("logged in successfully");
-//     }, 5000);
-// }
+    setTimeout(() => {
+        console.log("logged in successfully");
+    }, 5000);
+}
 
-// function getUser(){
-//     console.log("getting user....");
-//     setTimeout(() => {
-//         console.log("User details loaded");
-//     }, 2000);
-// }
+function getUser(){
+    console.log("getting user....");
+    setTimeout(() => {
+        console.log("User details loaded");
+    }, 2000);
+}
 
-// function getOrders(){
-//     console.log("getting orders");
+function getOrders(){
+    console.log("getting orders");
 
-//     setTimeout(() => {
-//         console.log("Orders loaded");
-//     }, 1000);
-// }
+    setTimeout(() => {
+        console.log("Orders loaded");
+    }, 1000);
+}
 
-// function getOrderDetails(){
-//     console.log("Getting order details.....");
-//     setTimeout(() => {
-//         console.log("Order details loaded");
-//     }, 4000);
-// }
+function getOrderDetails(){
+    console.log("Getting order details.....");
+    setTimeout(() => {
+        console.log("Order details loaded");
+    }, 4000);
+}
 
-// login();
-// getUser();
-// getOrders();
-// getOrderDetails();
+login();
+getUser();
+getOrders();
+getOrderDetails();
