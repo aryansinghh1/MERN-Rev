@@ -95,29 +95,29 @@
 
 ///////////////////////////////////////////////
 
-function greet (name){
-    console.log(`hello ${name}`);
-}
+// function greet (name){
+//     console.log(`hello ${name}`);
+// }
 
-function callGreet(callback){
-    console.log("start");
-    // callback("aryan");
-    callback();
-    console.log("end");
-}
+// function callGreet(callback){
+//     console.log("start");
+//     // callback("aryan");
+//     callback();
+//     console.log("end");
+// }
 
 // callGreet(greet);
 // callGreet(greet("jerry"));   //we can't do this
 
-callGreet(()=>{
-    greet("aryan");
-})
+// callGreet(()=>{
+//     greet("aryan");
+// })
 
 ////////////////////////////////////////////////////
 
-// setTimeout(()=>{
-// console.log("hello");
-// },1000)
+setTimeout(()=>{
+console.log("hello");
+},1000)
 
 ////////////////////////////////////////////////
 
