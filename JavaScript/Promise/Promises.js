@@ -103,8 +103,8 @@ function getOffers() {
 
 function getCatogories() {
   return new Promise((resolve, reject) => {
-    // let success = true;
-    let success = false;
+    let success = true;
+    // let success = false;
 
     setTimeout(() => {
       if (success) {
@@ -126,7 +126,18 @@ function getCatogories() {
 //     console.log("Error: ", error);
 // })
 
-Promise.allSettled([
+// Promise.allSettled([
+//     getProducts(),getOffers(),getCatogories()
+// ])
+// .then((data)=>{
+//     console.log("Success: ", data);
+// })
+// .catch((error)=>{
+//     console.log("Error: ", error);
+// })
+
+
+Promise.race([
     getProducts(),getOffers(),getCatogories()
 ])
 .then((data)=>{
