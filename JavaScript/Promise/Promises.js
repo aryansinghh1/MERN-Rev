@@ -73,7 +73,8 @@
 
 function getProducts() {
   return new Promise((resolve, reject) => {
-    let success = true;
+    let success = false;
+    // let success = true;
 
     setTimeout(() => {
       if (success) {
@@ -88,6 +89,7 @@ function getProducts() {
 function getOffers() {
   return new Promise((resolve, reject) => {
     let success = true;
+    // let success = false;
 
     setTimeout(() => {
       if (success) {
@@ -101,7 +103,8 @@ function getOffers() {
 
 function getCatogories() {
   return new Promise((resolve, reject) => {
-    let success = true;
+    // let success = true;
+    let success = false;
 
     setTimeout(() => {
       if (success) {
@@ -109,15 +112,25 @@ function getCatogories() {
       } else {
         reject("Catogories loading failed");
       }
-    }, 2000);
+    }, 1000);
   });
 }
 
-Promise.all([
+// Promise.all([
+//     getProducts(),getOffers(),getCatogories()
+// ])
+// .then((data)=>{
+//     console.log("Success: ", data);
+// })
+// .catch((error)=>{
+//     console.log("Error: ", error);
+// })
+
+Promise.allSettled([
     getProducts(),getOffers(),getCatogories()
 ])
 .then((data)=>{
-    console.log("success: ", data);
+    console.log("Success: ", data);
 })
 .catch((error)=>{
     console.log("Error: ", error);
