@@ -88,8 +88,8 @@ function getProducts() {
 
 function getOffers() {
   return new Promise((resolve, reject) => {
-    let success = true;
-    // let success = false;
+    // let success = true;
+    let success = false;
 
     setTimeout(() => {
       if (success) {
@@ -103,8 +103,8 @@ function getOffers() {
 
 function getCatogories() {
   return new Promise((resolve, reject) => {
-    let success = true;
-    // let success = false;
+    // let success = true;
+    let success = false;
 
     setTimeout(() => {
       if (success) {
@@ -137,7 +137,17 @@ function getCatogories() {
 // })
 
 
-Promise.race([
+// Promise.race([
+//     getProducts(),getOffers(),getCatogories()
+// ])
+// .then((data)=>{
+//     console.log("Success: ", data);
+// })
+// .catch((error)=>{
+//     console.log("Error: ", error);
+// })
+
+Promise.any([
     getProducts(),getOffers(),getCatogories()
 ])
 .then((data)=>{
