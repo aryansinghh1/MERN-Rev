@@ -71,50 +71,50 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-function getProducts() {
-  return new Promise((resolve, reject) => {
-    let success = false;
-    // let success = true;
+// function getProducts() {
+//   return new Promise((resolve, reject) => {
+//     let success = false;
+//     // let success = true;
 
-    setTimeout(() => {
-      if (success) {
-        resolve("Products Loaded");
-      } else {
-        reject("Product loading failed");
-      }
-    }, 3000);
-  });
-}
+//     setTimeout(() => {
+//       if (success) {
+//         resolve("Products Loaded");
+//       } else {
+//         reject("Product loading failed");
+//       }
+//     }, 3000);
+//   });
+// }
 
-function getOffers() {
-  return new Promise((resolve, reject) => {
-    // let success = true;
-    let success = false;
+// function getOffers() {
+//   return new Promise((resolve, reject) => {
+//     // let success = true;
+//     let success = false;
 
-    setTimeout(() => {
-      if (success) {
-        resolve("Offers Loaded");
-      } else {
-        reject("Offers loading failed");
-      }
-    }, 2000);
-  });
-}
+//     setTimeout(() => {
+//       if (success) {
+//         resolve("Offers Loaded");
+//       } else {
+//         reject("Offers loading failed");
+//       }
+//     }, 2000);
+//   });
+// }
 
-function getCatogories() {
-  return new Promise((resolve, reject) => {
-    // let success = true;
-    let success = false;
+// function getCatogories() {
+//   return new Promise((resolve, reject) => {
+//     // let success = true;
+//     let success = false;
 
-    setTimeout(() => {
-      if (success) {
-        resolve("Catogories Loaded");
-      } else {
-        reject("Catogories loading failed");
-      }
-    }, 1000);
-  });
-}
+//     setTimeout(() => {
+//       if (success) {
+//         resolve("Catogories Loaded");
+//       } else {
+//         reject("Catogories loading failed");
+//       }
+//     }, 1000);
+//   });
+// }
 
 // Promise.all([
 //     getProducts(),getOffers(),getCatogories()
