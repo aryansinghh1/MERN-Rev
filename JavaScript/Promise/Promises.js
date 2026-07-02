@@ -1,5 +1,6 @@
 const promise  = new Promise((resolve,reject) =>{
-    let success = false;
+    let success = true;
+    // let success = false;
 
     setTimeout(()=>{
         if(success){
