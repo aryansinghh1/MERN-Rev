@@ -25,49 +25,46 @@
 //     console.log("Promies complete");
 // })
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function login(callack) {
+function login() {
   console.log("Logging in....");
 
-  return new Promise((resove,reject)=>{
+  return new Promise((resove, reject) => {
     setTimeout(() => {
-    console.log("2.Logged in successfully");
-    resove();
-  }, 5000);
-  })
-  
+      console.log("2.Logged in successfully");
+      resove();
+    }, 5000);
+  });
 }
 
-function getUser(callack) {
+function getUser() {
   console.log("getting user....");
-  return new Promise((resolve,reject)=>{
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-    console.log("User details loaded");
-resolve();
-    
-  }, 2000);
-  })
+      console.log("User details loaded");
+      resolve();
+    }, 2000);
+  });
 }
 
-function getOrders(callack) {
+function getOrders() {
   console.log("Getting orders");
 
-  return new Promise((resolve,reject)=>{
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-    console.log("Orders loaded");
-    resolve();
-  }, 1000);
-  })
+      console.log("Orders loaded");
+      resolve();
+    }, 1000);
+  });
 }
 
 function getOrderDetails() {
-  return new Promise((resolve,reject)=>{
-    console.log("Getting order details.....");
+  console.log("Getting order details.....");
+
   setTimeout(() => {
     console.log("Order details loaded");
-    resolve();
   }, 4000);
-  })
 }
+
+login().then(getUser).then(getOrders).then(getOrderDetails);
