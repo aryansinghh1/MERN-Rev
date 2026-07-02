@@ -27,44 +27,98 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function login() {
-  console.log("Logging in....");
+// function login() {
+//   console.log("Logging in....");
 
-  return new Promise((resove, reject) => {
+//   return new Promise((resove, reject) => {
+//     setTimeout(() => {
+//       console.log("Logged in successfully");
+//       resove();
+//     }, 5000);
+//   });
+// }
+
+// function getUser() {
+//   console.log("Getting user....");
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("User details loaded");
+//       resolve();
+//     }, 2000);
+//   });
+// }
+
+// function getOrders() {
+//   console.log("Getting orders");
+
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("Orders loaded");
+//       resolve();
+//     }, 1000);
+//   });
+// }
+
+// function getOrderDetails() {
+//   console.log("Getting order details.....");
+
+//   setTimeout(() => {
+//     console.log("Order details loaded");
+//   }, 4000);
+// }
+
+// login().then(getUser).then(getOrders).then(getOrderDetails);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+function getProducts() {
+  return new Promise((resolve, reject) => {
+    let success = true;
+
     setTimeout(() => {
-      console.log("2.Logged in successfully");
-      resove();
-    }, 5000);
+      if (success) {
+        resolve("Products Loaded");
+      } else {
+        reject("Product loading failed");
+      }
+    }, 3000);
   });
 }
 
-function getUser() {
-  console.log("getting user....");
+function getOffers() {
   return new Promise((resolve, reject) => {
+    let success = true;
+
     setTimeout(() => {
-      console.log("User details loaded");
-      resolve();
+      if (success) {
+        resolve("Offers Loaded");
+      } else {
+        reject("Offers loading failed");
+      }
     }, 2000);
   });
 }
 
-function getOrders() {
-  console.log("Getting orders");
-
+function getCatogories() {
   return new Promise((resolve, reject) => {
+    let success = true;
+
     setTimeout(() => {
-      console.log("Orders loaded");
-      resolve();
-    }, 1000);
+      if (success) {
+        resolve("Catogories Loaded");
+      } else {
+        reject("Catogories loading failed");
+      }
+    }, 2000);
   });
 }
 
-function getOrderDetails() {
-  console.log("Getting order details.....");
-
-  setTimeout(() => {
-    console.log("Order details loaded");
-  }, 4000);
-}
-
-login().then(getUser).then(getOrders).then(getOrderDetails);
+Promise.all([
+    getProducts(),getOffers(),getCatogories()
+])
+.then((data)=>{
+    console.log("success: ", data);
+})
+.catch((error)=>{
+    console.log("Error: ", error);
+})
