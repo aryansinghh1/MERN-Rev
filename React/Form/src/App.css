@@ -183,3 +183,100 @@
   }
 } */
 
+:root {
+  --bg-start: #f8fafc;
+  --bg-end: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #334155;
+  --field-bg: #ffffff;
+  --field-border: #cbd5e1;
+  --field-focus: #0ea5e9;
+  --button-start: #0284c7;
+  --button-end: #0369a1;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-main);
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+}
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.student-form {
+  width: min(460px, 100%);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(2, 132, 199, 0.14);
+  padding: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.form-title {
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  text-align: left;
+}
+
+.field span {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1.5px solid var(--field-border);
+  border-radius: 12px;
+  background-color: var(--field-bg);
+  color: var(--text-main);
+  font-size: 0.98rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.form-input::placeholder {
+  color: #94a3b8;
+}
+
+.form-input:focus {
+  border-color: var(--field-focus);
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.18);
+  transform: translateY(-1px);
+}
+
+.submit-btn {
+  margin-top: 8px;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--button-start), var(--button-end));
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(3, 105, 161, 0.28);
+}
