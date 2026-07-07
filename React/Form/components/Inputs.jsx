@@ -25,7 +25,6 @@ function Inputs() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setSubmittedDataList((currentList) => [...currentList, formData]);
-    event.target.reset();
     setFormData({
       name: "",
       regId: "",
@@ -67,6 +66,7 @@ function Inputs() {
         <label className="field">
           <span>Email</span>
           <input
+          
             className="form-input"
             type="email"
             name="email"
