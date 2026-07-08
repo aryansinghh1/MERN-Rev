@@ -52,6 +52,7 @@ function Inputs() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Enter your name"
+            required
           />
         </label>
 
@@ -64,6 +65,7 @@ function Inputs() {
             value={formData.regId}
             onChange={handleChange}
             placeholder="Enter registration id"
+            required
           />
         </label>
 
@@ -77,6 +79,7 @@ function Inputs() {
             value={formData.email}
             onChange={handleChange}
             placeholder="Enter your email"
+            required
           />
         </label>
 
@@ -89,6 +92,7 @@ function Inputs() {
             value={formData.age}
             onChange={handleChange}
             placeholder="Enter your age"
+            required
           />
         </label>
 
@@ -101,6 +105,7 @@ function Inputs() {
             value={formData.city}
             onChange={handleChange}
             placeholder="Enter your city"
+            required
           />
         </label>
 
@@ -112,6 +117,7 @@ function Inputs() {
             value={formData.role}
             onChange={handleChange}
             id="role"
+            required
           >
             <option value="student">Student</option>
             <option value="scholar">Scholar</option>
