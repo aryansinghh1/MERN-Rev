@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 const initialFormData = {
   name: "",
@@ -11,7 +11,18 @@ const initialFormData = {
 
 function Inputs() {
   const [formData, setFormData] = useState(initialFormData);
-  const [submittedDataList, setSubmittedDataList] = useState([]);
+  const [submittedDataList, setSubmittedDataList] = useState(()=>{
+    const savedData = localStorage.getItem("students");
+
+    return savedData ? JSON.parse(savedData) : [];
+  });
+
+  useEffect(()=>{
+    localStorage.setItem(
+      "students",
+      JSON.stringify(submittedDataList)
+    );
+  },[submittedDataList])
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -25,14 +36,7 @@ function Inputs() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setSubmittedDataList((currentList) => [...currentList, formData]);
-    setFormData({
-      name: "",
-      regId: "",
-      email: "",
-      age: "",
-      city: "",
-      role: "student",
-    });
+    setFormData(initialFormData);
   };
 
   return (
