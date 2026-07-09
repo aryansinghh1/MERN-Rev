@@ -1,6 +1,7 @@
-import { useState, useRef,useMemo } from "react";
+import { useState, useRef, useMemo, useCallback } from "react";
 import "./App.css";
 import Child from "../components/Child";
+import Child2 from "../components/Child2";
 
 function App() {
   // const [image,setImage] = useState(null);
@@ -28,18 +29,22 @@ function App() {
     setCount((prev) => prev + 1);
   }
 
-  function expensiveCalculation(num) {
-    console.log("Calculating");
-    let result = 0;
-    for (let i = 0; i < 1000000; i++) {
-      result += num;
-    }
-    return result;
-  }
+  // function expensiveCalculation(num) {
+  //   console.log("Calculating");
+  //   let result = 0;
+  //   for (let i = 0; i < 1000000; i++) {
+  //     result += num;
+  //   }
+  //   return result;
+  // }
 
   // const result = expensiveCalculation(5);
   // const result = useMemo(()=> expensiveCalculation(5),[]);
-  const result = useMemo(()=> expensiveCalculation(count),[count]);
+  // const result = useMemo(()=> expensiveCalculation(count),[count]);
+
+  const handleClick = useCallback(() => {
+    console.log("Clicked!!");
+  }, []);
 
   return (
     ///////////////////////////////////////////////useRef and useState///////////////////////////////////////////////////////////
@@ -68,16 +73,27 @@ function App() {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ///////////////////////////////////////////useMemo////////////////////////////////////////////////////////////////
+    /////////////////used to memoize values
+    // <>
+    //   <h2>Counter</h2>
+    //    <p>Count:{count}</p>
+    //    <button onClick={increaseCount}>Increase</button>
+    //   {/* <p>Result: {expensiveCalculation(5)}</p> */}
+    //   <p>Result: {result}</p>
+    // </>
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ////////////////////////////////////////useCallback///////////////////////////////////////////////////
+
     <>
       <h2>Counter</h2>
-       <p>Count:{count}</p>
-       <button onClick={increaseCount}>Increase</button>
-      {/* <p>Result: {expensiveCalculation(5)}</p> */}
-      <p>Result: {result}</p>
+      <p>Count:{count}</p>
+      <button onClick={increaseCount}>Increase</button>
+      <Child2 handleClick={handleClick} />
     </>
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
   );
 }
 

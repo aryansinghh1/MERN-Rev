@@ -1,5 +1,5 @@
 import React from "react";
-
+//it is use to memoize Component
 const Child = React.memo(({ name }) => {
   console.log("Child Rendered");
   return (
