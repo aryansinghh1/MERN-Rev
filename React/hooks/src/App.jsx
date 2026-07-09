@@ -1,11 +1,12 @@
 
 
-import { useState } from "react";
+import { useState ,useRef} from "react";
 import "./App.css";
 
 function App() {
 
   const [image,setImage] = useState(null);
+  const imageRef = useRef();
 
   function handleChange (e){
     let file = e.target.files[0];
@@ -19,11 +20,13 @@ function App() {
 
   function removeImage(){
      setImage(null);
+     imageRef.current.value = '';
+
   }
 
   return (
     <>
-      <input type="file" accept="image/jpeg, image/png" 
+      <input type="file" accept="image/jpeg, image/png" ref={imageRef}
       onChange={handleChange}/>
 
       <button onClick={removeImage}>Remove Image</button>
