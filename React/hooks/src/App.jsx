@@ -32,13 +32,14 @@ function App() {
     console.log("Calculating");
     let result = 0;
     for (let i = 0; i < 1000000; i++) {
-      result += 5;
+      result += num;
     }
     return result;
   }
 
   // const result = expensiveCalculation(5);
-  const result = useMemo(()=> expensiveCalculation(5),[]);
+  // const result = useMemo(()=> expensiveCalculation(5),[]);
+  const result = useMemo(()=> expensiveCalculation(count),[count]);
 
   return (
     ///////////////////////////////////////////////useRef and useState///////////////////////////////////////////////////////////
