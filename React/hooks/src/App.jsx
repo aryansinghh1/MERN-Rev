@@ -2,12 +2,16 @@ import { useState, useRef, useMemo, useCallback } from "react";
 import "./App.css";
 import Child from "../components/Child";
 import Child2 from "../components/Child2";
+import GrandParent from "../components/GrandParant";
+
 
 function App() {
   // const [image,setImage] = useState(null);
   // const imageRef = useRef();
 
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
+
+  const [name,setName] = useState("Tom");
 
   // function handleChange (e){
   //   let file = e.target.files[0];
@@ -25,9 +29,9 @@ function App() {
 
   // }
 
-  function increaseCount() {
-    setCount((prev) => prev + 1);
-  }
+  // function increaseCount() {
+  //   setCount((prev) => prev + 1);
+  // }
 
   // function expensiveCalculation(num) {
   //   console.log("Calculating");
@@ -42,9 +46,9 @@ function App() {
   // const result = useMemo(()=> expensiveCalculation(5),[]);
   // const result = useMemo(()=> expensiveCalculation(count),[count]);
 
-  const handleClick = useCallback(() => {
-    console.log("Clicked!!");
-  }, []);
+  // const handleClick = useCallback(() => {
+  //   console.log("Clicked!!");
+  // }, []);
 
   return (
     ///////////////////////////////////////////////useRef and useState///////////////////////////////////////////////////////////
@@ -86,14 +90,22 @@ function App() {
 
     ////////////////////////////////////////useCallback///////////////////////////////////////////////////
 
-    <>
-      <h2>Counter</h2>
-      <p>Count:{count}</p>
-      <button onClick={increaseCount}>Increase</button>
-      <Child2 handleClick={handleClick} />
-    </>
+    // <>
+    //   <h2>Counter</h2>
+    //   <p>Count:{count}</p>
+    //   <button onClick={increaseCount}>Increase</button>
+    //   <Child2 handleClick={handleClick} />
+    // </>
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    ///////////////////////////////////////////////PROP Drilling////////////////////////////////////////////////////////////
+    <div>
+      <p>This is app.jsx</p>
+      {/* App passes the prop to GrandParent, which starts the prop-drilling chain. */}
+      <GrandParent name={name}/>
+    </div>
   );
 }
 
