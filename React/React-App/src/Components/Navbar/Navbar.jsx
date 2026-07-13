@@ -7,7 +7,7 @@ function Navbar() {
     <div className={theme}>
       <p>This is Navbar</p>
       Theme: {theme}
-      <button onClick={() => toggleTheme}>Toggle Theme</button>
+        <button onClick={toggleTheme}>Toggle Theme</button>
     </div>
   );
 }
