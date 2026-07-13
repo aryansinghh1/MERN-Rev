@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  /* min-height: 100vh; */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 
 form{
     display: flex;
@@ -31,4 +37,13 @@ h2{
     border-radius: 5px;
     color: white;
     background-color: rgb(84, 147, 255);
+}
+
+/* center the form on the page */
+.login-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #f7fbff, #ffffff);
 }

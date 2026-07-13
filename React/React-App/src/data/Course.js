@@ -90,3 +90,4 @@ const Courses = [
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500",
   },
 ];
+export default Courses;

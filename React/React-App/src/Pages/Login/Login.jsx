@@ -1,7 +1,8 @@
 import "./Login.css";
+
 function Login(){
     return(
-        <div>
+        <div className="login-container">
             <form  action="">
             <h2>Welcome Back</h2>
             <input className="input-box" type="email" placeholder="Enter Your Email" required/>

@@ -1,8 +1,19 @@
-function Dashboard(){
-    return(
+import React from 'react';
+import Courses from '../../data/Course';
+import CourseCard from '../../Components/CourseCard/CourseCard';
+
+function Dashboard() {
+    return (
         <div>
-            <p>This is dashboard</p>
+            <h2>Dashboard</h2>
+            <h3>Courses</h3>
+            <div className="courses-grid">
+                {Courses.map(course => (
+                    <CourseCard key={course.id} {...course} />
+                ))}
+            </div>
         </div>
-    )
+    );
 }
+
 export default Dashboard;
