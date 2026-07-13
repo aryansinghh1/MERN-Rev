@@ -1,92 +1,12 @@
-const Courses = [
-  {
-    id: 1,
-    title: "Complete MERN Stack Development",
-    instructor: "Om Jaiswal",
-    price: 499,
-    level: "Beginner",
-    duration: "12 Weeks",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=500",
-  },
-  {
-    id: 2,
-    title: "Complete Data Structures and Algorithms",
-    instructor: "Apna College",
-    price: 599,
-    level: "Intermediate",
-    duration: "16 Weeks",
-    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500",
-  },
-  {
-    id: 3,
-    title: "Complete Operating Systems",
-    instructor: "Love Babbar",
-    price: 499,
-    level: "Beginner",
-    duration: "8 Weeks",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500",
-  },
-  {
-    id: 4,
-    title: "Complete System Design",
-    instructor: "Gaurav Sen",
-    price: 799,
-    level: "Advanced",
-    duration: "10 Weeks",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500",
-  },
-  {
-    id: 5,
-    title: "Complete Computer Networking",
-    instructor: "CodeHelp",
-    price: 549,
-    level: "Intermediate",
-    duration: "9 Weeks",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500",
-  },
-  {
-    id: 6,
-    title: "Complete Java Fundamentals",
-    instructor: "Kunal Kushwaha",
-    price: 399,
-    level: "Beginner",
-    duration: "6 Weeks",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500",
-  },
-  {
-    id: 7,
-    title: "Mastering React.js",
-    instructor: "Hitesh Choudhary",
-    price: 699,
-    level: "Intermediate",
-    duration: "10 Weeks",
-    image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=500",
-  },
-  {
-    id: 8,
-    title: "Node.js and Express Bootcamp",
-    instructor: "Piyush Garg",
-    price: 649,
-    level: "Intermediate",
-    duration: "8 Weeks",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500",
-  },
-  {
-    id: 9,
-    title: "MongoDB Complete Guide",
-    instructor: "Thapa Technical",
-    price: 449,
-    level: "Beginner",
-    duration: "5 Weeks",
-    image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=500",
-  },
-  {
-    id: 10,
-    title: "DevOps with Docker and Kubernetes",
-    instructor: "TechWorld with Nana",
-    price: 999,
-    level: "Advanced",
-    duration: "14 Weeks",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500",
-  },
-];
+function CourseCard(props){
+    return(
+        <div>
+           < img src={props.image} alt="CourseName"/>
+           <h3>{props.title}</h3>
+           <p>{props.instructor}</p>
+           <p>{props.price}</p>
+           {/* <p>{props}</p> */}
+        </div>
+    )
+}
+export default CourseCard;
