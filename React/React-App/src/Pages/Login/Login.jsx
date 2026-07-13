@@ -1,10 +1,12 @@
+import "./Login.css";
 function Login(){
     return(
         <div>
-            <form action="">
-            <input type="email" placeholder="Enter Your Email" />
-            <input type="password" placeholder="Enter Your Password"/>
-            <button type="submit">Login</button>
+            <form  action="">
+            <h2>Welcome Back</h2>
+            <input className="input-box" type="email" placeholder="Enter Your Email" required/>
+            <input className="input-box" type="password" placeholder="Enter Your Password" required/>
+            <button className="sub-btn" type="submit">Login</button>
             </form>
 
         </div>
