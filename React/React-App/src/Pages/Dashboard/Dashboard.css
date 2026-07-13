@@ -1,7 +1,10 @@
 .dark{
-
+    background-color: rgb(59, 58, 58);
+color: white;
 }
 
 .light{
-    
+    background-color: antiquewhite;
+    color: black;
+
 }
