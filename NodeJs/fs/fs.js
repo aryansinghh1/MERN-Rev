@@ -11,6 +11,16 @@ const fs = require("fs");
 //   console.log(data);
 // });
 
+
+try{
+const data = fs.readFileSync("hello.txt","utf-8");
+console.log(data);
+}catch{
+console.log("Error:",err);
+}
+
+console.log("Hello");
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////to over write the file////////////////////////////////////////////////////////////////////////
@@ -33,16 +43,16 @@ const fs = require("fs");
 
 ////////////////////////////////////////////to append in the file/////////////////////////////////////////////////////////////////
 
-fs.appendFile(
-    'hello1.txt',
-    '\nGoodMorning world',
-    (err)=>{
-        if(err){
-            console.log("error while append");
-            return;
-        }
-        console.log("Appended");
-    }
-)
+// fs.appendFile(
+//     'hello1.txt',
+//     '\nGoodMorning world',
+//     (err)=>{
+//         if(err){
+//             console.log("error while append");
+//             return;
+//         }
+//         console.log("Appended");
+//     }
+// )
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
