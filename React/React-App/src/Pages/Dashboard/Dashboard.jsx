@@ -7,7 +7,7 @@ function Dashboard() {
     const{theme} = useContext(ThemeContext);
     return (
 
-        <div className={theme}>
+        <div className={`page ${theme}`}>
             <h2>Dashboard</h2>
             <h3>Courses</h3>
             

@@ -1,0 +1,44 @@
+.root,
+:root {
+	--page-color: #f6f9ff;
+	--surface-color: rgba(255, 255, 255, 0.92);
+	--card-color: #ffffff;
+	--text-color: #172033;
+	--muted-color: #5d6b84;
+	--border-color: #dbe3f0;
+	--accent-color: #1677ff;
+	--accent-soft: rgba(22, 119, 255, 0.12);
+	--card-shadow: 0 2px 6px rgba(16, 24, 40, 0.04);
+}
+
+.app-shell {
+	min-height: 100vh;
+	background: var(--page-color);
+	color: var(--text-color);
+}
+
+.app-shell.dark {
+	--page-color: #0f1728;
+	--surface-color: rgba(16, 24, 40, 0.88);
+	--card-color: #182235;
+	--text-color: #f5f7fb;
+	--muted-color: #aab4c5;
+	--border-color: #2a364a;
+	--accent-color: #7ab4ff;
+	--accent-soft: rgba(122, 180, 255, 0.14);
+	--card-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+}
+
+body {
+	margin: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background: #f6f9ff;
+	color: var(--text-color);
+}
+
+.page {
+	min-height: calc(100vh - 132px);
+	padding: 24px;
+	background: var(--page-color);
+	color: var(--text-color);
+}

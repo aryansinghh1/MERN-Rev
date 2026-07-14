@@ -7,10 +7,14 @@ import Signup from "./Pages/Signup/Signup";
 import About from "./Pages/About/About";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import { ThemeContext } from "./context/ThemeContext";
+import { useContext } from "react";
 
 function App() {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div>
+    <div className={`app-shell ${theme}`}>
       <Navbar/>
       <Routes>
         <Route path="/" element={<Dashboard />} />

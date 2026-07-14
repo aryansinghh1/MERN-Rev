@@ -1,9 +1,7 @@
-.dark {
-  background-color: rgb(59, 58, 58);
-  color: white;
-}
-
-.light {
-  background-color: antiquewhite;
-  color: black;
+.footer {
+  padding: 18px 28px;
+  border-top: 1px solid var(--border-color);
+  background: var(--surface-color);
+  color: var(--muted-color);
+  text-align: center;
 }

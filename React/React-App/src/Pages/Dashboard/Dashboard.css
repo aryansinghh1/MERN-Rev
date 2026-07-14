@@ -1,10 +1,15 @@
-.dark{
-    background-color: rgb(59, 58, 58);
-color: white;
+.page {
+    min-height: calc(100vh - 132px);
+    padding: 24px;
+    background: var(--page-color);
+    color: var(--text-color);
 }
 
-.light{
-    background-color: antiquewhite;
-    color: black;
+.page h2,
+.page h3 {
+    margin-top: 0;
+}
 
+.courses-grid {
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
