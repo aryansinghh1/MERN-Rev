@@ -39,7 +39,7 @@ h2{
     background-color: rgb(84, 147, 255);
 }
 
-/* center the form on the page */
+
 .login-container{
     min-height: 100vh;
     display: flex;
