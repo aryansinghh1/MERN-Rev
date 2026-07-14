@@ -46,3 +46,13 @@ h2{
     justify-content: center;
     background: linear-gradient(180deg, #f7fbff, #ffffff);
 }
+
+.dark {
+  background-color: rgb(59, 58, 58);
+  color: white;
+}
+
+.light {
+  background-color: antiquewhite;
+  color: black;
+}
