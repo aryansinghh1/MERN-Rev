@@ -75,6 +75,9 @@ app.post("/student", (req, res) => {
   res.status(201).json({ success: true, data: newStudent });
 }); 
 
+app.get("/student",(req,res)=>{
+  res.json({success:true,data:students});
+})
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 app.listen(PORT, () => console.log("Server is running"));
