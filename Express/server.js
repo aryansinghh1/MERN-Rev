@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
-app.use(express.json());  //to post data students
+app.use(express.json()); //to post data students
 
 app.get("/", (req, res) => {
   res.send("Hello World");
@@ -62,22 +62,64 @@ app.get("/login", (req, res) => {
 
 /////////////////////////////////////////////post students name//////////////////////////////////////////////////
 
-const students = [
-  { id: 1, name: "tom", age: 22, course: "mern" },
-  { id: 2, name: "tom", age: 24, course: "cpp" },
-  { id: 3, name: "harry", age: 32, course: "dsa" },
-];
+// const students = [
+//   { id: 1, name: "tom", age: 22, course: "mern" },
+//   { id: 2, name: "tom", age: 24, course: "cpp" },
+//   { id: 3, name: "harry", age: 32, course: "dsa" },
+// ];
 
-app.post("/student", (req, res) => {
-  const { name, age, course } = req.body;
-  const newStudent = { id: students.length + 1, name, age, course };
-  students.push(newStudent);
-  res.status(201).json({ success: true, data: newStudent });
-}); 
+// app.post("/student", (req, res) => {
+//   const { name, age, course } = req.body;
+//   const newStudent = { id: students.length + 1, name, age, course };
+//   students.push(newStudent);
+//   res.status(201).json({ success: true, data: newStudent });
+// });
 
-app.get("/student",(req,res)=>{
-  res.json({success:true,data:students});
-})
+// app.get("/student",(req,res)=>{
+//   res.json({success:true,data:students});
+// })
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////POST PUT PATCH DELETE//////////////////////////////////////////////////////////////////////
+
+const students = [
+  { id: 1, name: "Aryan", age: 23 },
+  { id: 2, name: "Som", age: 24 },
+  { id: 3, name: "Abhi", age: 25 },
+];
+
+// app.post("/student", (req, res) => {
+//   const { name, age } = req.body;
+//   const newStudents = { id: students.length + 1, name, age };
+//   students.push(newStudents);
+
+//   res.json({ success: true, data: newStudents });
+// });
+
+// app.put("/student/:id",(req,res)=>{
+//   const id = Number(req.params.id);
+//   const {name,age}= req.body;
+//   const studentIndex = students.findIndex((s)=>s.id === id);
+//   if(studentIndex === -1){
+//     return res.status(404).json({success:false,data:"Student not found"});
+//   }
+//   students[studentIndex] = {id,name,age};
+//   res.json({success:true,data:students[studentIndex]});
+// });
+
+// app.patch("/student/:id",(req,res)=>{
+//   const id = Number(req.params.id);
+//   const {name,age}= req.body;
+//   const studentIndex = students.findIndex((s)=>s.id === id);
+//   if(studentIndex === -1){
+//     return res.status(404).json({success:false,data:"Student not found"});
+//   }
+//   students[studentIndex] = {id,name,age};
+//   res.json({success:true,data:students[studentIndex]});
+// });
+
+
+
+
 app.listen(PORT, () => console.log("Server is running"));
