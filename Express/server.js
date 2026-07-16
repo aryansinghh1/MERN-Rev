@@ -89,37 +89,49 @@ const students = [
   { id: 3, name: "Abhi", age: 25 },
 ];
 
-// app.post("/student", (req, res) => {
-//   const { name, age } = req.body;
-//   const newStudents = { id: students.length + 1, name, age };
-//   students.push(newStudents);
+app.get("/student",(req,res)=>{
+  res.json({success:true,data:students});
+})
 
-//   res.json({ success: true, data: newStudents });
-// });
+app.post("/student", (req, res) => {
+  const { name, age } = req.body;
+  const newStudents = { id: students.length + 1, name, age };
+  students.push(newStudents);
 
-// app.put("/student/:id",(req,res)=>{
-//   const id = Number(req.params.id);
-//   const {name,age}= req.body;
-//   const studentIndex = students.findIndex((s)=>s.id === id);
-//   if(studentIndex === -1){
-//     return res.status(404).json({success:false,data:"Student not found"});
-//   }
-//   students[studentIndex] = {id,name,age};
-//   res.json({success:true,data:students[studentIndex]});
-// });
+  res.json({ success: true, data: newStudents });
+});
 
-// app.patch("/student/:id",(req,res)=>{
-//   const id = Number(req.params.id);
-//   const {name,age}= req.body;
-//   const studentIndex = students.findIndex((s)=>s.id === id);
-//   if(studentIndex === -1){
-//     return res.status(404).json({success:false,data:"Student not found"});
-//   }
-//   students[studentIndex] = {id,name,age};
-//   res.json({success:true,data:students[studentIndex]});
-// });
+app.put("/student/:id",(req,res)=>{
+  const id = Number(req.params.id);
+  const {name,age}= req.body;
+  const studentIndex = students.findIndex((s)=>s.id === id);
+  if(studentIndex === -1){
+    return res.status(404).json({success:false,data:"Student not found"});
+  }
+  students[studentIndex] = {id,name,age};
+  res.json({success:true,data:students[studentIndex]});
+});
 
+app.patch("/student/:id",(req,res)=>{
+  const id = Number(req.params.id);
+  const {name,age}= req.body;
+  const studentIndex = students.findIndex((s)=>s.id === id);
+  if(studentIndex === -1){
+    return res.status(404).json({success:false,data:"Student not found"});
+  }
+  students[studentIndex] = {id,name,age};
+  res.json({success:true,data:students[studentIndex]});
+});
 
+app.delete("/student/:id",(req,res)=>{
+  const id = Number(req.params.id);
+  const studentIndex = students.findIndex((s)=>s.id === id);
+  if(studentIndex === -1){
+    return res.status(404).json({success:false,data:"Student not found"});
+  }
+  const deletedStudent = students.splice(studentIndex,1);
+  res.json({success:true,data:deletedStudent[0]});
+});
 
 
 app.listen(PORT, () => console.log("Server is running"));
