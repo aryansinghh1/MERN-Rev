@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
+const { logger } = require("../middleware/loggers");
+const morfan = require("morgan");
+
 app.use(express.json()); //to post data students
 
 app.get("/", (req, res) => {
@@ -82,6 +85,8 @@ app.get("/login", (req, res) => {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////POST PUT PATCH DELETE//////////////////////////////////////////////////////////////////////
+
+app.use(logger);
 
 const students = [
   { id: 1, name: "Aryan", age: 23 },
