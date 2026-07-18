@@ -1,7 +1,9 @@
 [
     {
-        "id":1,
-        "age": 25,
-        "name" : "aryan"
+        "firstName" : "Aryan",
+        "lastName" : "Singh",
+        "email" : "aryan@email.com",
+        "password" : "aryan",
+        "role" : "student"
     }
 ]
