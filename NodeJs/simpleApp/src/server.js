@@ -70,6 +70,11 @@ app.post("/signup", async (req, res) => {
   }
 });
 
+app.post("/login" ,(req,res) =>{
+  const {email,password} = req.body;
+  
+})
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
