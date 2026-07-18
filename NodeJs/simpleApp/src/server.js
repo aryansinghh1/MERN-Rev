@@ -4,6 +4,7 @@ import fs from "fs/promises";
 import path from "path";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
+import bcrypt from "bcrypt";
 
 dotenv.config();
 
@@ -42,12 +43,14 @@ app.post("/signup", async (req, res) => {
       });
     }
 
+    const hashedPassword = await (bcrypt.hash(password,10));
+
     const newUser = {
       id: users.length + 1,
       firstName,
       lastName,
       email,
-      password,
+      password : hashedPassword,
       role: "student",
     };
 

@@ -1,9 +1,10 @@
 [
-    {
-        "firstName" : "Aryan",
-        "lastName" : "Singh",
-        "email" : "aryan@email.com",
-        "password" : "aryan",
-        "role" : "student"
-    }
+  {
+    "id": 1,
+    "firstName": "aryan",
+    "lastName": "singh",
+    "email": "aryan@mail.com",
+    "password": "$2b$10$xw0BivCHZO4o1b/DncYT2OwaatS4y.hBqqdsuTtVRcsna./uTbKMe",
+    "role": "student"
+  }
 ]
