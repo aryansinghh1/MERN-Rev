@@ -15,14 +15,6 @@ function Navbar() {
         <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
           About
         </NavLink>
-
-        {/* <NavLink to="/login" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
-          Login
-        </NavLink>
-        <NavLink to="/signup" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
-          Signup
-        </NavLink> */}
-        
       </nav>
       <button className="theme-toggle" onClick={toggleTheme} type="button">
         {theme === "light" ? "Dark mode" : "Light mode"}

@@ -1,0 +1,29 @@
+.page {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  line-height: 1.8;
+  font-family: Arial, sans-serif;
+}
+
+.page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.page h2 {
+  margin-top: 30px;
+  color: #0077ff;
+}
+
+.page p {
+  margin-bottom: 15px;
+}
+
+.page ul {
+  padding-left: 20px;
+}
+
+.page li {
+  margin-bottom: 8px;
+}
