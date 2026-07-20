@@ -5,6 +5,16 @@
     "lastName": "singh",
     "email": "aryan@mail.com",
     "password": "$2b$10$xw0BivCHZO4o1b/DncYT2OwaatS4y.hBqqdsuTtVRcsna./uTbKMe",
-    "role": "student"
+    "role": "student",
+    "course" : [1,2]
+  },
+  {
+    "id": 2,
+    "firstName": "som",
+    "lastName": "singh",
+    "email": "som@mail.com",
+    "password": "$2b$10$MFR9MHkunwU5tzZ45OEg4uy97KMHJXmXDGUyOBbcRqsQ1cs9ja8ei",
+    "role": "student",
+    "course" : [1,2]
   }
 ]
