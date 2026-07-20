@@ -56,11 +56,13 @@ app.post("/signup", async (req, res) => {
 
     users.push(newUser);
 
+     const {password : _ , ...userData} = newUser;
+
     await fs.writeFile(usersFile, JSON.stringify(users, null, 2));
 
     return res.status(201).json({
       message: "Signup successful",
-      user: newUser,
+      user: userData,
     });
   } catch (error) {
     console.error(error);
