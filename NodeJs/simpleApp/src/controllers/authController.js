@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import fs from "fs/promises";
+import { usersFile } from "../config/dataPaths.js";
 
 const jwtSecret = process.env.JWT_SECRET;
 
@@ -110,6 +111,27 @@ export const login = async (req, res) => {
     return res.status(500).json({
       message: "Failed to complete login",
     });
+  }
+};
+
+export const getProfile = async (req, res) => {
+  try {
+    const users = JSON.parse(await fs.readFile(usersFile, "utf-8"));
+    const user = users.find((currentUser) => currentUser.id === req.user.id);
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const { password: userPassword, ...safeUser } = user;
+
+    return res.status(200).json({
+      message: "Profile fetched successfully",
+      user: safeUser,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Failed to fetch profile" });
   }
 };
 
