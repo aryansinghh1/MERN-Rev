@@ -3,6 +3,7 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
 import courseRoutes from "./routes/courseRoutes.js";
+import { connectDB } from "./config/db.js";
 
 
 dotenv.config();
@@ -10,6 +11,8 @@ dotenv.config();
 const port = process.env.PORT || 3000;
 
 const app = express();
+
+connectDB();
 
 app.use(morgan("dev"));
 app.use(express.json());
