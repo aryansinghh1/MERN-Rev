@@ -9,4 +9,6 @@ router.get('/get-courses', getCourses);
 
 router.post('/add-course', authenticate, authorize('instructor'), addCourse);
 
+// router.get('/mycourses', myCourses);
+
 export default router;

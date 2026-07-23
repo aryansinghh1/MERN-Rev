@@ -1,6 +1,7 @@
 // import fs from 'fs/promises';
 // import { coursePath } from '../index.js';
 import Course from "../models/Course.js";
+import User from "../models/User.js";
 
 export const getCourses = async (req, res) => {
   try {
@@ -26,15 +27,22 @@ export const getCourses = async (req, res) => {
 
 export const addCourse = async (req, res) => {
   try {
-    const { title, price, duration, level, image } = req.body;
+    const { title, price, duration, level, imageUrl } = req.body;
     const newCourse = await Course.create({
       title,
-      instructor: req.user.id,
+      instructorId: req.user.id,
       price,
       duration,
       level,
-      imageUrl: image,
+      imageUrl,
     });
+
+    await User.findByIdAndUpdate(req.user.id,{
+      $push:{
+        createdCourses: newCourse._id
+      }
+    })
+
     res.json({
       message: "New course is added",
       newCourse,
