@@ -1,7 +1,12 @@
 import { Router } from "express";
-import { getAllCourses } from "../controllers/courseController.js";
+import { getCourses, addCourse } from "../controllers/courseController.js";
+import { authenticate } from "../middleware/authenticate.js";
+import { authorize } from "../middleware/authorize.js";
 
 const router = Router();
-router.get("/",getAllCourses );
+
+router.get('/get-courses', getCourses);
+
+router.post('/add-course', authenticate, authorize('instructor'), addCourse);
 
 export default router;

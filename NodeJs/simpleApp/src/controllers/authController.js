@@ -1,137 +1,102 @@
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import fs from "fs/promises";
-import { usersFile } from "../config/dataPaths.js";
-
-const jwtSecret = process.env.JWT_SECRET;
-
-const generateToken = (user) => {
-  return jwt.sign(
-    {
-      id: user.id,
-      email: user.email,
-      role: user.role,
-    },
-    jwtSecret,
-    { expiresIn: "7d" }
-  );
-};
-
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+// import fs from "fs/promises";
+// import { userPath } from '../index.js';
+import User from '../models/User.js';
 
 export const signup = async (req, res) => {
-  try {
-    const { firstName, lastName, email, password } = req.body;
+    // const data = req.body;
+    try {
+        const { firstName, lastName, email, password } = req.body;
+        // console.log('Data: ', data);
 
-    if (!firstName || !lastName || !email || !password) {
-      return res.status(400).json({
-        message: "All information is required for signup",
-      });
+        if (!firstName || !lastName || !email || !password) {
+            res.json({ message: "All informations are required for signup"});
+            return;
+        }
+
+        // const users = JSON.parse(await fs.readFile( userPath, 'utf-8'));
+        // const existingUser = users.find(u => u.email === email);
+
+        const existingUser = await User.findOne({ email });
+
+        if (existingUser) {
+            res.json({ message: "User with this email already exists"});
+            return;
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        await User.create({
+            firstName,
+            lastName,
+            email,
+            password: hashedPassword,
+            role: 'student'
+        })
+
+        // const newUser = {
+        //     id: users.length + 1,
+        //     firstName,
+        //     lastName,
+        //     email,
+        //     password: hashedPassword,
+        //     role: "student",
+        //     courses: []
+        // }
+
+        // users.push(newUser);
+        // const { password: _, ...userData } = newUser;
+        // await fs.writeFile(userPath, JSON.stringify(users, null, 2));
+        res.json({
+            message: "New User added successfully",
+            // data: userData
+        });
+        return;
+    } catch(err) {
+        console.log('Error');
+        res.json({ message: "Unable to create new user, Please try again!"});
+        return;
     }
-
-    const users = JSON.parse(await fs.readFile(usersFile, "utf-8"));
-
-    const existingUser = users.find((user) => user.email === email);
-
-    if (existingUser) {
-      return res.status(409).json({
-        message: "User with this email already exists",
-      });
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    const newUser = {
-      id: users.length + 1,
-      firstName,
-      lastName,
-      email,
-      password: hashedPassword,
-      role: "student",
-    };
-
-    users.push(newUser);
-
-     const { password: _, ...userData } = newUser;
-
-    await fs.writeFile(usersFile, JSON.stringify(users, null, 2));
-
-    const token = generateToken(newUser);
-
-    return res.status(201).json({
-      message: "Signup successful",
-      token,
-      user: userData,
-    });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({
-      message: "Failed to complete signup",
-    });
-  }
-};
+    
+}
 
 export const login = async (req, res) => {
-  try {
-
     const { email, password } = req.body;
-
     if (!email || !password) {
-      return res.status(400).json({
-        message: "Email and password are required for login",
-      });
+     res.json({ message: 'Email and password both are required for Login!'});
+     return;
     }
+ 
+    // const users = JSON.parse(await fs.readFile(userPath, 'utf-8'));
+    // const user = users.find(u => u.email === email);
 
-    const users = JSON.parse(await fs.readFile(usersFile, "utf-8"));
-    const user = users.find((currentUser) => currentUser.email === email);
-
+    const user = await User.findOne({ email });
+ 
     if (!user) {
-      return res.status(404).json({
-        message: "User not found",
-      });
+     res.json({ message: "User does not exist" });
+     return;
     }
-
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-
-    if (!isPasswordValid) {
-      return res.status(401).json({
-        message: "Invalid email or password",
-      });
+ 
+    const isMatched = await bcrypt.compare(password, user.password);
+ 
+    if (!isMatched) {
+     res.json({ message: "Invalid credentials"});
+     return;
     }
-
-    const { password: userPassword, ...safeUser } = user;
-    const token = generateToken(user);
-
-    return res.status(200).json({
-      message: "Login successful",
-      token,
-      user: safeUser,
+ 
+    const token = jwt.sign(
+     {
+         id: user.id,
+         role: user.role
+     },
+     process.env.JWT_SECRET,
+     { expiresIn: '7d' }
+    )
+ 
+    res.json({
+     message: "Logged in successfully",
+     token
     });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({
-      message: "Failed to complete login",
-    });
-  }
-};
-
-export const getProfile = async (req, res) => {
-  try {
-    const users = JSON.parse(await fs.readFile(usersFile, "utf-8"));
-    const user = users.find((currentUser) => currentUser.id === req.user.id);
-
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
-
-    const { password: userPassword, ...safeUser } = user;
-
-    return res.status(200).json({
-      message: "Profile fetched successfully",
-      user: safeUser,
-    });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Failed to fetch profile" });
-  }
-};
-
+    return;
+ }
