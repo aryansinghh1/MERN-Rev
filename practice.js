@@ -1,7 +1,10 @@
-function add (a,b){
-    return a + b;
-}
+// let arr = [1,2]
 
-for(let i = 0 ; i < 10; i++){
-    console.log(add(10,i));
-}
+// arr.push(3);
+// arr.push(4);
+// arr.shift();
+// arr.unshift(1);
+
+// for(let i = 0 ; i<arr.length; i++){
+//     console.log(arr[i]);
+// }
