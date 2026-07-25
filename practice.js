@@ -8,3 +8,13 @@
 // for(let i = 0 ; i<arr.length; i++){
 //     console.log(arr[i]);
 // }
+
+// let ans = arr.map((num)=>{
+//     return num*2;
+// })
+
+// console.log(ans);
+
+let name = "Aryan";
+
+console.log(`Hello ${name}`);
