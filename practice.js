@@ -68,16 +68,18 @@ import { constrainedMemory } from "node:process";
 
 let arr = [1,2,2,3,1];
 
-let freq = {};
+// let freq = {};
 
-for(let num of arr){
+// for(let num of arr){
 
-    if(freq[num]){
-        freq[num]++;
-    }else{
-        freq[num] = 1;
-    }
+//     if(freq[num]){
+//         freq[num]++;
+//     }else{
+//         freq[num] = 1;
+//     }
 
-}
+// }
 
-console.log(freq);
+// console.log(freq);
+
+console.log("2" + 3 );
